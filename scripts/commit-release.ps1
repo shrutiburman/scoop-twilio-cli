@@ -8,10 +8,10 @@ git config --global user.name "twilio-dx"
 git add .\twilio.json
 $git_status=git status --porcelain
 $branch=git branch --show-current
-
+echo $branch
 if ($git_status -ne $null) {
-    git commit -m "Update manifest to version $version"
-    git push origin "$branch"
+#     git commit -m "Update manifest to version $version"
+#     git push origin "$branch"
 } else {
     echo "No changes to commit";
     Exit 1
