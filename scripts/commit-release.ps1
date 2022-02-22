@@ -6,6 +6,7 @@ echo "Git configurations"
 git config --global user.email "team_interfaces+github@twilio.com"
 git config --global user.name "twilio-dx"
 if ($version -contains "draft") {
+ echo "contains DRAFT yess"
  git add .\twiliodraft.json
 } else {
  git add .\twilio.json
@@ -13,7 +14,7 @@ if ($version -contains "draft") {
 
 $git_status=git status --porcelain
 $branch=git branch --show-current
-echo @git_status
+echo $git_status
 if ($git_status -ne $null) {
     git commit -m "Update manifest to version $version"
     git push origin "$branch"
