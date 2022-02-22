@@ -13,7 +13,7 @@ if ($version -contains "draft") {
 
 $git_status=git status --porcelain
 $branch=git branch --show-current
-
+echo @git_status
 if ($git_status -ne $null) {
     git commit -m "Update manifest to version $version"
     git push origin "$branch"
