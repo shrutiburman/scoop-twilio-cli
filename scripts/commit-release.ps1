@@ -5,7 +5,8 @@ param(
 echo "Git configurations"
 git config --global user.email "team_interfaces+github@twilio.com"
 git config --global user.name "twilio-dx"
-if ($version -contains "draft") {
+echo $version
+if ($version -like "*draft*") {
  echo "contains DRAFT yess"
  git add .\twiliodraft.json
 } else {
